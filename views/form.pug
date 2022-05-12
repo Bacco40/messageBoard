@@ -1,0 +1,22 @@
+extends layout
+
+block content
+  body
+    header
+        h1(class='pageTitle')= title
+        button(type="button" class='goBack') 
+            a(href='/') Go Back
+    main
+        div(class='formContainer')
+            div(class='content')
+                h2(class='pageSubtitle') Add New Message:
+                form(method='POST' action='/new')
+                    div(class='inputContainer')
+                        label(for='author') Author :
+                        input(type='text', id="author" placeholder='Your name here' name='author')
+                    div(class='inputContainer')
+                        label(for='messageText') Message :
+                        input(type='text', id="messageText" placeholder='Your message here' name="messageText")
+                    div(class='buttonContainer')
+                        button(type="submit", class='submit') Submit
+                

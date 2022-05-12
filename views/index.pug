@@ -1,0 +1,16 @@
+extends layout
+
+block content
+  header
+    h1(class='pageTitle')= title
+    button(type="button" class='Add') 
+      a(href='/new') Add New Message
+  main 
+    div(class='messageContainer')
+      each val in messages
+        div(class='singleMessage')
+          h3= val.text
+          p by #{val.user}
+          p=val.added
+  
+  
